@@ -5,12 +5,6 @@ export const Method = {
   DELETE: `DELETE`
 };
 
-export const Action = {
-  CREATE: `create`,
-  UPDATE: `update`,
-  DELETE: `delete`,
-};
-
 export const Position = {
   BEGIN: `afterBegin`,
   END: `beforeEnd`,
@@ -23,8 +17,6 @@ export const createElement = (template) => {
   newElement.innerHTML = template;
   return newElement.firstChild;
 };
-
-export const capitalizeFirstLetter = (word) => word[0].toUpperCase() + word.slice(1);
 
 export const render = (container, element, position = Position.END) => {
   switch (position) {

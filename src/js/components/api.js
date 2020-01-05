@@ -34,12 +34,12 @@ export default class API {
       body: JSON.stringify(data),
       headers: new Headers({'Content-Type': `application/json`})
     })
+        // .then(toJSON)
         .then((response) => {
           if (response.status === 204) {
-            return response.statusText
+            return response.statusText;
           }
         })
-      // .then(toJSON)
   }
 
   _load({url, method = Method.GET, body = null, headers = new Headers()}) {
