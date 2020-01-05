@@ -1,0 +1,16 @@
+# Файлы редактора
+.idea
+
+# Вспомогательные файлы
+*.log*
+node_modules/
+
+# Файлы сборки
+public/bundle.js*
+
+# Папка с собранными файлами проекта
+dist/
+
+.babelrc
+.gitignore
+

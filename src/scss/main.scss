@@ -1,0 +1,164 @@
+@import "utils/mixins.scss";
+@import "utils/vars.scss";
+
+html  {
+  background-color: $backgroundColor;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  font-family: $mainFont;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 13px;
+  }
+}
+
+*, *:before, *:after {box-sizing: border-box}
+
+h1 {
+  font-size: $mainTitleSize;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0 30px 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $desktopWidth;
+
+  @media screen and (max-width: $desktopWidth){
+    max-width: $mdDesktopWidth;
+  }
+  @media screen and (max-width: $mdDesktopWidth){
+    max-width: $smDesktopWidth;
+  }
+  @media screen and (max-width: $smDesktopWidth){
+    max-width: $phoneWidth;
+  }
+  @media screen and (max-width: $phoneWidth){
+    max-width: $smPhoneWidth;
+  }
+}
+
+.header {
+  min-height: 800px;
+}
+
+.gallery {
+  text-align: left;
+}
+
+.gallery img {
+  display: inline-block;
+  padding: 30px 15px 0;
+  width: 229px;
+  cursor: pointer;
+  @media screen and (max-width: $phoneWidth) {
+    width: auto;
+  }
+}
+.modal-wrap {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  position: relative;
+  padding: 30px;
+  max-width: 80%;
+  background-color: $backgroundColor;
+}
+.modal input {
+  display: block;
+  padding: 8px 11px;
+  margin: 10px 0;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  width: 100%;
+}
+.picture-wrap {
+  display: flex;
+}
+.picture-wrap img {
+  max-width: 60%;
+}
+.comments {
+  padding-left: 14px;
+  max-width: 40%;
+}
+.date {
+  color: $commentsDateColor;
+}
+.modal-button {
+  width: 100%;
+  background-color: $buttonColor;
+  color: $backgroundColor;
+  height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.form {
+  max-width: 60%;
+}
+
+.close {
+  background-color: $backgroundTransparent;
+  position: absolute;
+  right: 18px;
+  height: 24px;
+  top: 17px;
+  width: 24px;
+  cursor: pointer;
+  padding-left: 13px;
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  content: '';
+  height: 25px;
+  width: 1px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:hover:before {
+  transform: rotate(-45deg);
+  transition: .2s ease-in-out;
+  background-color: $buttonColor;
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+.close:hover:after {
+  background-color: $buttonColor;
+  transform: rotate(-135deg);
+  transition: .2s ease-in-out;
+}
+
+
+.footer {
+  color: $footerTextColor;
+  text-align: center;
+  border-top: 1px solid $footerTextColor;
+}
+
+.footer p {
+  text-transform: uppercase;
+  font-size: $footerFontSize;
+}
+
